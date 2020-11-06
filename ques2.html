@@ -1,0 +1,32 @@
+<!-- 
+    Gurpreet Kaur
+    Program to...
+    Todays date 
+-->
+
+<html>
+
+<head>
+    <title>
+        Solution 2
+    </title>
+    <script>
+        let oddNumbers = [];
+        let sum = 0;
+        let counter = 1;
+        while (oddNumbers.length < 100) 
+        {
+            if (counter % 2 !== 0) {
+                oddNumbers.push(counter);
+                sum += counter;
+            }
+            counter ++;
+        }
+        let output = `${oddNumbers.join(' + ')} = ${sum}`;
+        document.write(output);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

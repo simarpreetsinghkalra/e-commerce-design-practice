@@ -1,0 +1,65 @@
+<!-- 
+    Gurpreet Kaur
+    Program to...
+    Todays date 
+-->
+
+<html>
+
+<head>
+    <title>
+        Solution 1
+    </title>
+    <script>
+        let listOne = [], listTwo = [], listThree = [];
+
+        // function to get the user input from form, put them in array and add them and display output
+        function sum()
+        {
+            let form = document.forms['arrays'];
+            listOne = form['aArrayVal'].value.trim().split(',');
+            listTwo = form['bArrayVal'].value.trim().split(',');
+            for (var i = 0; i < 10; i++)
+            {
+                listThree[i] = Number(listOne[i]) + Number(listTwo[i]);
+            }
+
+            let output = `${generateHtmlOutput(listOne, 'listOne')} <hr/> ${generateHtmlOutput(listTwo, 'listTwo')} <hr/> ${generateHtmlOutput(listThree, 'listThree')}`
+            document.getElementById('output').innerHTML = output;
+        }
+
+        // function to generate html output for each array
+        function generateHtmlOutput(arr, arrName)
+        {
+            let output = '';
+            arr.forEach((element, i) =>
+            {
+                output += `${arrName}[${i}] = ${arr[i]}<br />`;
+            });
+            return output;
+        }
+    </script>
+</head>
+
+<body>
+    <form name="arrays" onsubmit="return false;">
+        <label>Enter 10 number for listOne array separated by commas</label><br />
+        <input type="text" name="aArrayVal" placeholder="10,28,27,82....." /><br /><br />
+        <label>Enter 10 number for listTwo array separated by commas</label><br />
+        <input type="text" name="bArrayVal" placeholder="10,28,27,82....." /><br /><br />
+    </form>
+    <form name="bArray">
+    </form>
+    <button onclick="sum()">SUM</button>
+    <br />
+    <hr />
+    <br />
+    <h3>
+        Output:
+    </h3>
+    <div id="output">
+
+    </div>
+</body>
+
+</html>

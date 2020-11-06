@@ -1,0 +1,89 @@
+<!-- 
+    Gurpreet Kaur
+    Program to...
+    Todays date 
+-->
+
+<html>
+
+<head>
+    <title>
+        Solution 3
+    </title>
+    <script>
+        function calculateTax() 
+        {
+            // PURPOSE: function to get the user details from form and calculate the income tax
+            let form = document.forms['customerInfo'];
+            let customer = {};
+            let incomeTax = 0;
+            let taxPercent = 0;
+            customer.name = form['name'].value;
+            customer.email = form['email'].value;
+            customer.income = form['income'].value;
+            if (validateForm(customer)) {
+                customer.income = Number(customer.income);
+                if (customer.income >= 0 && customer.income <= 10000) {
+                    incomeTax = 'No tax';
+                    taxPercent = 0;
+                } else if (customer.income >= 10001 && customer.income <= 40000) {
+                    taxPercent = 10;
+                    incomeTax = customer.income * (taxPercent / 100);
+                } else if (customer.income >= 40001 && customer.income <= 80000) {
+                    taxPercent = 20;
+                    incomeTax = customer.income * (taxPercent / 100);
+                } else if (customer.income >= 80001) {
+                    taxPercent = 30;
+                    incomeTax = customer.income * (taxPercent / 100);
+                }
+                document.getElementById('output').innerHTML = `${taxPercent}% of ${customer.income} = ${taxPercent > 0 ? '$' + incomeTax : incomeTax}`;
+            }
+        }
+
+        function validateForm(customer) 
+        {
+            // PURPOSE: function to validate name and income from the values of form
+            // ARGUMENTS: customer object with name, email and income
+            let validated = true;
+            if (isNaN(customer.income)) {
+                validated = validated && false;
+                document.getElementById('incomeError').innerHTML = `- INCOME IS NOT A NUMBER`;
+            } else {
+                validated = validated && true;
+                document.getElementById('incomeError').innerHTML = ``;
+            }
+            let namePattern = /^[A-Za-z]+\s[A-Za-z]*$/;
+            if (namePattern.test(customer.name)) {
+                validated = validated && true;
+                document.getElementById('nameError').innerHTML = ``;
+            } else {
+                validated = validated && false;
+                document.getElementById('nameError').innerHTML = `- NAME IS NOT IN CORRECT FORMAT`;
+            }
+            return validated;
+        }
+    </script>
+</head>
+
+<body>
+    <form name="customerInfo" onsubmit="return false;">
+        <label>Customer Name</label><br />
+        <input type="text" name="name" placeholder="John Doe" required /> <span id="nameError"></span><br /><br />
+        <label>Email</label><br />
+        <input type="email" name="email" placeholder="user@domain.com" required /> <span
+            id="emailError"></span><br /><br />
+        <label>Annual Income (in $)</label><br />
+        <input type="text" name="income" placeholder="45000" /> <span id="incomeError"></span><br /><br />
+    </form>
+    <form name="bArray">
+    </form>
+    <button onclick="calculateTax()">Calculate Income Tax</button>
+    <br />
+    <hr />
+    <br />
+    <h3>
+        Income Tax: <span id="output"></span>
+    </h3>
+</body>
+
+</html>

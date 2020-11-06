@@ -1,0 +1,219 @@
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(90deg, transparent, #f0ed2969);
+}
+h1,
+h2 {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    background-color: #fdc101;
+    padding: 0 20px;
+}
+.title a {
+    text-decoration: none;
+    color: black;
+}
+
+.container {
+    padding: 20px;
+}
+.menu a {
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+}
+
+.prod-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.prod {
+    width: 25%;
+    margin: 25px;
+    padding: 10px;
+    box-shadow: 0px 0px 2px 1px grey;
+    background-color: white;
+}
+
+.prod-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+    overflow: hidden;
+}
+
+.prod-pic img {
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.prod-name h2 {
+    font-size: 17px;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.prod-desc p {
+    font-size: 14px;
+    color: darkslategrey;
+    height: 125px;
+    overflow: hidden;
+}
+
+.prod-btn-grp {
+    display: flex;
+    justify-content: space-around;
+}
+
+.prod-btn-grp {
+    display: flex;
+    justify-content: space-around;
+}
+
+.prod-btn-grp .prod-btn {
+    width: 40%;
+    min-height: 30px;
+    border-radius: 50px;
+    border: none;
+    background-color: white;
+    font-weight: 600;
+}
+
+.prod-btn-grp .prod-btn.btn-buy {
+    color: white;
+    background-color: #fdc101;
+    border: 1px solid #fdc101;
+}
+
+.prod-btn-grp .prod-btn.btn-details {
+    border: 1px solid red;
+    color: red;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item-in {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 500px;
+}
+
+.item-img {
+    width: 140px;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.item-details p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.item-details h2.name {
+    font-size: 18px;
+}
+.item-details .btn-remove {
+    background-color: white;
+    border: 1px solid red;
+    border-radius: 50px;
+    color: red;
+}
+
+hr {
+    height: 2px;
+    background-color: #fdc101;
+    border: none;
+}
+
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.total p {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.cart-btn-grp {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.cart-btn-grp button {
+    height: 40px;
+    width: 135px;
+    border: none;
+    border-radius: 50px;
+    background-color: white;
+    font-size: 16px;
+}
+
+.cart-btn-grp button.btn-checkout {
+    color: white;
+    background-color: #fdc101;
+    border: 1px solid #fdc101;
+}
+.cart-btn-grp button.btn-cancel {
+    border: 1px solid red;
+    color: red;
+}
+
+.reg-form {
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+}
+
+.reg-form .input {
+    display: flex;
+    flex-direction: column;
+}
+
+.reg-form .input input {
+    margin: 5px 0 0;
+    border: 2px solid #fdc101;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.reg-form .input select {
+    margin: 5px 0 0;
+    border: 2px solid #fdc101;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.user-info p {
+    margin: 5px 0;
+}
+
+.err-msg {
+    text-align: center;
+    font-weight: 600;
+    color: red;
+}
+
+.reg-form .err-msg {
+    margin-top: 5px;
+    font-weight: 400;
+    font-size: 12px;
+}
